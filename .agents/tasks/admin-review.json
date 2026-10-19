@@ -1,0 +1,22 @@
+{
+  "verdict": "APPROVED",
+  "findings": [
+    {
+      "id": "fragment-missing-key",
+      "severity": "warning",
+      "file": "app/admin/orders/page.tsx",
+      "line": 112,
+      "summary": "Fragment missing key on orders rows",
+      "detail": "filtered.map uses a bare <> fragment as the outermost element. React cannot assign a key to it, so every rendered order generates a console key warning. Fix: replace <> with <React.Fragment key={order.id}> and remove the key from the inner <tr>."
+    },
+    {
+      "id": "cookie-missing-secure-samesite",
+      "severity": "warning",
+      "file": "app/admin/login/page.tsx",
+      "line": 22,
+      "summary": "Cookie missing Secure and SameSite attributes",
+      "detail": "document.cookie sets addy_admin=true without Secure or SameSite=Lax. On any non-localhost HTTP deployment the cookie travels in cleartext, and the missing SameSite opens a CSRF vector. Add Secure; SameSite=Lax to the cookie string."
+    }
+  ],
+  "reviewDoc": "c:\\Users\\Adarsh\\Desktop\\agency\\clothe-store\\.agents\\tasks\\admin-review.md"
+}
